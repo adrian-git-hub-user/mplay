@@ -1,6 +1,7 @@
+    
 angular.module('app', [])
 
-. controller('ShoppingCartCtrl', function ($scope)  {
+. controller('ShoppingCartCtrl', function ($scope , $http)  {
     
         $scope.items = [
 			{Name: "Soap", Price: "25", Quantity: "10"},
@@ -13,30 +14,16 @@ angular.module('app', [])
 				return item[$scope.sortExpression];
 			return parseInt(item[$scope.sortExpression]);
 		}
+
+$http({
+  method: 'GET',
+  url: './playlist.js'
+}).then(function successCallback(response) {
+$scope.items = response.data;
+  });
+  
 });
 
-
-var json = '[{'+
-	'"name": "Mr Robot. Where is my mind",'+
-	'"url": "EMfNB3fakB8" '+
-'}'+
-','+ 
-'{'+
-	'"name": "Fightclub. Where is my mind",'+
-	'"url": "QOvEFNVWj4M"'+
-'}'+
-','+ 
-'{'+
-	'"name": "David Bowie. Life on Mars",'+
-	'"url": "-bOYg1sU9iI"'+
-'}'+
-']'
-
-var arr = JSON.parse(json);
-for (var i = 0; i < arr.length; i++){
-  var obj = arr[i];
-    document.write('<div><a class="fancybox fancybox.iframe" href=http://www.youtube.com/embed/'+obj.url+'?enablejsapi=1&wmode=opaque>'+obj.name+'</a></div>');
-}
 
 // Fires whenever a player has finished loading
 function onPlayerReady(event) {

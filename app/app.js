@@ -4,7 +4,8 @@ var app = express();
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
-  res.send('Hello World! test cool');
+    res.sendfile('./index.html')
+  //res.send('Hello World! test cool');
 });
 
 app.get('/index', function (req, res) {

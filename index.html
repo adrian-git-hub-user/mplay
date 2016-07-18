@@ -2,6 +2,9 @@
 <!doctype html>
 
 <link rel="stylesheet" href="content.css"><!-- load bootstrap -->
+
+
+
     <!-- SPELLS -->
 
     
@@ -9,18 +12,23 @@
 <script src="http://www.youtube.com/player_api"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
-    <link rel="stylesheet" type="text/css" href="http://fancyapps.com/fancybox/source/jquery.fancybox.css"></link>
-    <script src="http://fancyapps.com/fancybox/source/jquery.fancybox.js"></script>    
-
-
-    
-    
     <script src="core.js"></script>
-    
+    <script src="http://fancyapps.com/fancybox/source/jquery.fancybox.js"></script> 
+  <link rel="stylesheet" type="text/css" href="http://fancyapps.com/fancybox/source/jquery.fancybox.css"></link>  
+<!--<link rel="stylesheet" type="text/css" href="fancybox-custom.css"></link>
+-->
 <div ng-app="app">
     <span class="bold">Demonstrating filtering and sorting using Angular JS</span>
     <br /><br />
-        <div ng-controller="ShoppingCartCtrl">        
+        <div ng-controller="ShoppingCartCtrl"> 
+        
+        <table>
+          <tr ng-repeat="i in items">
+          <td><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/{{i.url}}?enablejsapi=1&wmode=opaque">{{i.name}}</a></td>
+
+            </tr>
+            </table>
+            <!--
             <div>Sort by: 
             <select ng-model="sortExpression">
 					<option value="Name">Name</option>
@@ -29,8 +37,8 @@
 				</select>
             </div>
 			<br />
-			<div><strong>Filter Results</strong></div>
-			<table>
+			<div><strong>Filter Results</strong></div>-->
+<!--			<table>
 				<tr>
 					<td>By Any: </td>
 					<td><input type="text" ng-model="search.$" /></td>
@@ -48,8 +56,8 @@
 					<td><input type="text" ng-model="search.Quantity" /></td>
 				</tr>
 			</table>
-            <br />
-            <table border="1">
+-->            <br />
+            <!--<table border="1">
 				<thead>
 					<tr>
 						<th>Name</th>
@@ -65,7 +73,11 @@
 					</tr>
 				</tbody>
 			</table>
-			<br />
+			--><br />
 </div>
 </div>
+
+
+
+
 
