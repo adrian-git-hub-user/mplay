@@ -1,22 +1,20 @@
 <!-- index.html -->
 <!doctype html>
 
-<link rel="stylesheet" href="content.css"><!-- load bootstrap -->
-
-
-
-    <!-- SPELLS -->
-
-    
 <!-- This loads the YouTube IFrame Player API code -->
 <script src="http://www.youtube.com/player_api"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
     <script src="core.js"></script>
-    <script src="http://fancyapps.com/fancybox/source/jquery.fancybox.js"></script> 
-  <link rel="stylesheet" type="text/css" href="http://fancyapps.com/fancybox/source/jquery.fancybox.css"></link>  
-<!--<link rel="stylesheet" type="text/css" href="fancybox-custom.css"></link>
--->
+    <script src="scripts/node_modules/fancybox/dist/js/jquery.fancybox.js"></script>
+    
+     <link rel="stylesheet" type="text/css" href="scripts/node_modules/bootstrap/dist/css/bootstrap.min.css"></link>
+      <script src="scripts/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      
+      
+  <link rel="stylesheet" type="text/css" href="scripts/node_modules/fancybox/dist/css/jquery.fancybox.css"></link>  
+  <link rel="stylesheet" type="text/css" href="fancybox-custom.css"></link>
+
 <div ng-app="app">
     <span class="bold">Demonstrating filtering and sorting using Angular JS</span>
     <br /><br />
@@ -24,10 +22,51 @@
         
         <table>
           <tr ng-repeat="i in items">
-          <td><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/{{i.url}}?enablejsapi=1&wmode=opaque">{{i.name}}</a></td>
+          <td><a class="fancybox fancybox.iframe" href="https://www.youtube.com/embed/{{i.url}}?enablejsapi=1&wmode=opaque">{{i.name}}</a></td>
 
             </tr>
             </table>
+            
+            
+           <div class="container">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Post Info -->
+<div style='position:fixed;bottom:0;left:0;    
+            background:lightgray;width:100%;'>
+    About this SO Question: <a href='http://stackoverflow.com/q/20151370/1366033'>Make Twitter Bootstrap Table's right most column flush against the edge</a><br/>
+    Fork This Skeleton Here <a href='http://jsfiddle.net/KyleMit/kcpma/'>Bootrsap 3.0 Skeleton</a><br/>
+<div>
+
+
             <!--
             <div>Sort by: 
             <select ng-model="sortExpression">
